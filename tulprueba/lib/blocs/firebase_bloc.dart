@@ -86,10 +86,14 @@ class FirebaseBloc {
 
   }
 
+  createCart(String idCart, Map<String, dynamic> collections) {
+    _fireStore.collection('carts').document(idCart).setData(collections, merge: true);
+  }
+
   saveProdCart(String idCart, String idProduct, Map<String, dynamic> collections) {
 
     //_fireStore.collection('products_cars').add(collections);
-    _fireStore.collection('carts').document(idCart).collection('products_cart').document(idProduct). setData(collections, merge: true);
+    _fireStore.collection('carts').document(idCart).collection('products_cart').document(idProduct).setData(collections, merge: true);
   }
 
   //not use

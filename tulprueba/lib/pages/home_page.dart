@@ -36,7 +36,7 @@ class _MyHomePageState extends State<HomePage> {
             } else if (snapshot.hasError) {
               return Text(snapshot.error.toString());
             } else {
-              return new Text("");
+              return new Text("Hubo un error inesperado");
             }
           },
         )
@@ -142,6 +142,11 @@ class _MyHomePageState extends State<HomePage> {
         print(product.data);
       }
     }*/
+
+    bloc.createCart(_idCart, {
+      'id' : _idCart,
+      'status' : 'pending'
+    });
 
     Navigator.pushNamed(
         context,
