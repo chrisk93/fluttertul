@@ -65,6 +65,7 @@ class _MyHomePageState extends State<HomePage> {
   Widget _card(dynamic snapshot, BuildContext context) {
 
   //var prod = snapshot.data.documents;
+    var id = 'id';
 
     return Card(
         elevation: 10,
@@ -109,9 +110,9 @@ class _MyHomePageState extends State<HomePage> {
               RaisedButton(
                 color: Colors.yellow,
                 onPressed: () {
-                  bloc.saveProdCart(_idCart,snapshot.data['id'], { //snapshot.data['id']
+                  bloc.saveProdCart(_idCart,snapshot.data[id], { //snapshot.data['id']
                     'cart_id' : _idCart,
-                    'product_id' : snapshot.data['id'],
+                    'product_id' : snapshot.data[id],
                     'quantity' : 1,
                     'nombre' : snapshot.data['nombre'],
                     'descripcion' : snapshot.data['descripcion'],
